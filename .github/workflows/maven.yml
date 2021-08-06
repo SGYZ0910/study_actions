@@ -31,5 +31,5 @@ jobs:
       run: echo "${{ secrets.REGISTRY_PASSWORD }}" |  docker login --username=shuangguanyize registry.cn-hangzhou.aliyuncs.com --password-stdin
     # 上传 docker 镜像
     - name: Push image to aliyun docker image registry
-      run: docker push registry.cn-hangzhou.aliyuncs.com/yvam0910/demo_actions:0.1
+      run: docker push
     
