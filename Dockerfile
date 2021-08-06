@@ -1,7 +1,7 @@
 # FROM 指定基础镜像
 FROM openjdk:8-jdk-alpine
 # COPY 复制文件
-ARG JAR_FILE=build/libs/*.jar
+ARG JAR_FILE=target/*.jar
 # COPY 复制文件
 COPY ${JAR_FILE} app.jar
 # 暴露端口
