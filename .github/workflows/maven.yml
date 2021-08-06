@@ -24,7 +24,7 @@ jobs:
       run: mvn -B package --file pom.xml
     # 通过 Dockerfile 构建镜像
     - name: Build docker image
-      run: docker build . -t demo_actions:v1.0
+      run: docker build . -t demo_actions:0.1
     
     # 登陆到我们自己的 docker registry
     - name: Login to aliyun docker image registry
@@ -32,5 +32,5 @@ jobs:
 
     # 上传 docker 镜像
     - name: Push image to aliyun docker image registry
-      run: docker push demo_actions:v1.0
+      run: docker push demo_actions:0.1
     
