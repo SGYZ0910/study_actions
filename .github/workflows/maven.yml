@@ -28,7 +28,7 @@ jobs:
     
     # 登陆到我们自己的 docker registry
     - name: Login to aliyun docker image registry
-      run: echo "${{ secrets.REGISTRY_PASSWORD }}" |  docker login --username=shangguanyize registry.cn-hangzhou.aliyuncs.com --password-stdin
+      run: echo "${{ secrets.REGISTRY_PASSWORD }}" |  docker login --username=shuangguanyize registry.cn-hangzhou.aliyuncs.com --password-stdin
     - name: docker tag to aliyun docker image registry
       run: docker tag demo_actions registry.cn-hangzhou.aliyuncs.com/yvam0910/demo_actions:0.1
     # 上传 docker 镜像
