@@ -48,6 +48,6 @@ jobs:
 
     # # 触发服务器部署脚本
     - name: Trigger server deployment script
-      run: ssh root@{{ 42.194.141.181 }} "sh {{ 1.sh }}"
+      run: ssh root@42.194.141.181 "sh 1.sh"
 
 
