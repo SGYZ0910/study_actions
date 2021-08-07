@@ -35,3 +35,19 @@ jobs:
     - name: Push image to aliyun docker image registry
       run: docker push registry.cn-hangzhou.aliyuncs.com/yvam0910/demo_actions:0.1
     
+
+    # # 连接到远程服务器
+    - name: Connect to server
+      uses: webfactory/ssh-agent@v0.4.1
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    
+    # 初始化 knownhosts
+    - name: Setup knownhosts
+      run: ssh-keyscan {{ 42.194.141.181 }} >> ~/.ssh/known_hosts
+
+    # # 触发服务器部署脚本
+    - name: Trigger server deployment script
+      run: ssh root@{{ 42.194.141.181 }} "sh {{ 1.sh }}"
+
+
